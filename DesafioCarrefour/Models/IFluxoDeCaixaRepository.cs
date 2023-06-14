@@ -1,9 +1,12 @@
-﻿namespace FluxoDeCaixa.Services
+﻿using FluxoDeCaixa.Controllers;
+
+namespace FluxoDeCaixa.Models
 {
     public interface IFluxoDeCaixaRepository
     {
         decimal ObterSaldoDiario();
         void AtualizarSaldoDiario(decimal novoSaldoDiario);
+        void RegistrarLancamento(TipoLancamento tipoLancamento, decimal valor);
     }
 
     public class FluxoDeCaixaRepository : IFluxoDeCaixaRepository
@@ -18,6 +21,11 @@
         public void AtualizarSaldoDiario(decimal novoSaldoDiario)
         {
             saldoDiario = novoSaldoDiario;
+        }
+
+        public void RegistrarLancamento(TipoLancamento tipoLancamento, decimal valor)
+        {
+            throw new NotImplementedException();
         }
     }
 }

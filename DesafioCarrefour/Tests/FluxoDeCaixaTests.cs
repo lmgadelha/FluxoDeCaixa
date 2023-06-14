@@ -1,8 +1,8 @@
 ﻿namespace FluxoDeCaixa.Tests
 {
+    using FluxoDeCaixa.Controllers;
     using FluxoDeCaixa.Models;
     using NUnit.Framework;
-    using static FluxoDeCaixa.Models.Enums;
 
     [TestFixture]
     public class FluxoDeCaixaTests

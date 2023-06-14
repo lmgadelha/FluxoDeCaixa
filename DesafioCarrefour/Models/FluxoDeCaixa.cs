@@ -1,7 +1,8 @@
-﻿using static FluxoDeCaixa.Models.Enums;
+﻿using FluxoDeCaixa.Controllers;
 
 namespace FluxoDeCaixa.Models
-{    public class FluxoDeCaixa
+{
+    public class FluxoDeCaixa
     {
         public decimal SaldoDiario { get; set; }
 

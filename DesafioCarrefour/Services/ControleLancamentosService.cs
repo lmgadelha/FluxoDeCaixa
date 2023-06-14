@@ -1,4 +1,5 @@
-﻿using static FluxoDeCaixa.Models.Enums;
+﻿using FluxoDeCaixa.Controllers;
+using FluxoDeCaixa.Models;
 
 namespace FluxoDeCaixa.Services
 {

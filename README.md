@@ -67,5 +67,3 @@ O serviço de saldo diário consolidado é acessado através de uma API REST.
         "saldoDiarioConsolidado": 500.75
     }
     ```
-
----
