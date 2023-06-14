@@ -11,7 +11,7 @@ namespace FluxoDeCaixa.Models
 
     public class FluxoDeCaixaRepository : IFluxoDeCaixaRepository
     {
-        private decimal saldoDiario;
+        private static decimal saldoDiario;
 
         public decimal ObterSaldoDiario()
         {
@@ -25,7 +25,15 @@ namespace FluxoDeCaixa.Models
 
         public void RegistrarLancamento(TipoLancamento tipoLancamento, decimal valor)
         {
-            throw new NotImplementedException();
+            switch (tipoLancamento)
+            {
+                case TipoLancamento.Credito: saldoDiario += valor;
+                    break;
+                case TipoLancamento.Debito: saldoDiario -= valor;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

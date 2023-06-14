@@ -1,6 +1,7 @@
 namespace FluxoDeCaixa.Controllers
 {
     using FluxoDeCaixa.Models;
+    using FluxoDeCaixa.Services;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
@@ -17,7 +18,8 @@ namespace FluxoDeCaixa.Controllers
         [HttpGet]
         public ActionResult<decimal> GetSaldoDiario()
         {
-            decimal saldoDiario = _fluxoDeCaixaRepository.ObterSaldoDiario();
+            var servicoSaldo = new SaldoDiarioService(_fluxoDeCaixaRepository);
+            decimal saldoDiario = servicoSaldo.ObterSaldoDiarioConsolidado();
             return Ok(saldoDiario);
         }
     }
@@ -47,7 +49,8 @@ namespace FluxoDeCaixa.Controllers
             }
 
             // Registra o lançamento no fluxo de caixa
-            _fluxoDeCaixaRepository.RegistrarLancamento(request.TipoLancamento, request.Valor);
+            var servicoLancamento = new ControleLancamentosService(_fluxoDeCaixaRepository);
+            servicoLancamento.RegistrarLancamento(request.TipoLancamento, request.Valor);
 
             return Ok();
         }
